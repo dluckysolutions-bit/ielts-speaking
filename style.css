@@ -193,21 +193,17 @@ p{
 
 }
 
-.section-heading{
 
-    margin-bottom:3rem;
-#gap .section-heading{
-
-    margin-bottom:4rem;
-
+.section-heading {
+    margin-bottom: 3rem;
 }
 
+#gap .section-heading {
+    margin-bottom: 4rem;
 }
 
-.section-heading>*+*{
-
-    margin-top:1rem;
-
+.section-heading > * + * {
+    margin-top: 1rem;
 }
 
 /*==============================
@@ -280,31 +276,34 @@ HERO
     padding-block: 2.5rem 1.5rem;
 }
 
+
 .hero-content {
     display: grid;
-    grid-template-columns: 1.1fr .9fr;
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
-    min-height: 65vh;
+    gap: 2rem;
+    min-height: 0;
 }
 
-.hero-copy>*+*{
-
-    margin-top:1.5rem;
-
+.hero-copy,
+.hero-image {
+    min-width: 0;
+    width: 100%;
 }
 
-.hero-image img{
-
-    border-radius:var(--radius-xl);
-
-    box-shadow:var(--shadow);
-
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
 }
 
-.hero-copy .btn-primary{
-
-    margin-top:2rem;
-
+@media (min-width: 768px) {
+    .hero-content {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+        gap: 3rem;
+    }
 }
 
 
@@ -377,35 +376,39 @@ ASSESSMENT REPORT
 
 }
 
-.score-row{
 
-    display:grid;
-    grid-template-columns:170px 1fr 40px;
-    align-items:center;
-    gap:1rem;
-
+.score-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 2.5rem;
+    align-items: center;
+    gap: .4rem .75rem;
+    font-size: .85rem;
 }
 
-.progress{
-
-    height:6px;
-    background:#edf2f7;
-    border-radius:999px;
-    
-
+.score-row > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
-.fill{
-
-    height:100%;
-    background:var(--primary);
-    border-radius:999px;
-
+.score-row > strong {
+    text-align: right;
 }
 
-.w60{width:60%;}
-.w65{width:65%;}
-.w70{width:70%;}
+.score-row .progress {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+@media (min-width: 768px) {
+    .score-row {
+        grid-template-columns: minmax(7rem, 1fr) minmax(3rem, 1.2fr) 2.5rem;
+    }
+
+    .score-row .progress {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
 
 
 /*==============================
@@ -965,4 +968,55 @@ html {
 
 .form-success p {
     margin: 0;
+}
+
+
+#assessment-form form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 42rem;
+}
+
+#assessment-form form > div {
+    display: grid;
+    gap: .4rem;
+    min-width: 0;
+}
+
+#assessment-form label {
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+#assessment-form input,
+#assessment-form select {
+    width: 100%;
+    min-width: 0;
+    min-height: 3rem;
+    padding: .7rem .85rem;
+    border: 1px solid #cbd5e1;
+    border-radius: .65rem;
+    background: #fff;
+    color: var(--text);
+}
+
+#assessment-form form .btn-primary {
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    #assessment-form form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #assessment-form form > div:nth-last-child(2),
+    #assessment-form form > .btn-primary {
+        grid-column: 1 / -1;
+    }
+
+    #assessment-form form .btn-primary {
+        width: auto;
+    }
 }
