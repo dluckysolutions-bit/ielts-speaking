@@ -722,29 +722,23 @@ CONCLUSION
 OFFER
 ==============================*/
 
-.offer-card{
-
-    display:grid;
-
-    gap:3rem;
-
-    padding:clamp(2rem,4vw,4rem);
-
-    background:#fff;
-
-    border:1px solid var(--border);
-
-    border-radius:var(--radius-xl);
-
-    box-shadow:var(--shadow);
-
+.offer-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.8fr);
+    align-items: start;
+    gap: 3rem;
+    padding: clamp(2rem, 4vw, 4rem);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
 }
 
-.offer-content>*+*{
 
-    margin-top:1.5rem;
-
+.offer-content {
+    min-width: 0;
 }
+
 
 .offer-label{
 
@@ -782,17 +776,25 @@ OFFER
 
 }
 
-.offer-sidebar{
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    gap:2rem;
-
+.offer-sidebar {
+    display: flex;
+    justify-content: flex-start;
 }
+
+.offer-sidebar .btn-primary {
+    width: 100%;
+}
+
+
+.offer-sidebar .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 
 .price{
 
@@ -801,6 +803,17 @@ OFFER
     font-weight:800;
 
 }
+
+
+@media(min-width:768px) {
+    .offer-card {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+}
+
+
+
 
 /*==============================
 FAQ
@@ -884,26 +897,21 @@ HELPERS
 TABLET
 ==============================*/
 
-@media(min-width:768px){
+@media (min-width: 768px) {
 
-    .hero-content{
-
-        grid-template-columns:1.1fr .9fr;
-
+    .offer-card {
+        display: block;
     }
 
-    .gap-grid{
-
-        grid-template-columns:1fr 1fr;
-
+    .offer-sidebar {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: flex-start;
     }
 
-    .offer-card{
-
-        grid-template-columns:2fr 1fr;
-
-        align-items:center;
-
+    .offer-sidebar .btn-primary {
+        width: auto;
+        min-width: 260px;
     }
 
 }
