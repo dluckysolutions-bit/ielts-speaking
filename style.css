@@ -937,27 +937,42 @@ DESKTOP
 MOBILE
 ==============================*/
 
-@media(max-width:767px){
+/*==============================
+MOBILE
+==============================*/
 
-    h1{
+@media (max-width: 767px) {
 
-        max-width:100%;
-
+    h1 {
+        max-width: 100%;
     }
 
-    .btn-primary{
-
-        width:100%;
-
+    .btn-primary {
+        width: 100%;
     }
 
-    .offer-sidebar{
+    .offer-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 
-        text-align:center;
+    .offer-content {
+        width: 100%;
+    }
 
+    .offer-sidebar {
+        width: 100%;
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .offer-sidebar .btn-primary {
+        width: 100%;
     }
 
 }
+
 
 html {
     scroll-behavior: smooth;
