@@ -297,14 +297,14 @@ HERO
 ==============================*/
 
 #hero{
-    padding-block: 2.5rem 1.5rem;
+    padding-block: 4rem 4rem;
 }
 
 
 .hero-content {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    align-items: center;
+    align-items: start;
     gap: 2rem;
     min-height: 0;
 }
@@ -330,97 +330,24 @@ HERO
     }
 }
 
+/* Hero Video */
 
-/*==============================
-ASSESSMENT REPORT
-==============================*/
 
-.hero-report{
-
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:var(--radius-xl);
-    padding:1rem;
-    box-shadow:var(--shadow);
-    margin-bottom:.75rem;
-
+.hero-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    background: #181818;
 }
 
-.report-header{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    margin-bottom:1rem;
-    padding-bottom:1rem;
-    border-bottom:1px solid var(--border);
-
-
-}
-
-.report-tag{
-
-    display:inline-block;
-    padding:.5rem 1rem;
-    border-radius:999px;
-    background:#eef4ff;
-    color:var(--primary);
-    font-size:.8rem;
-    font-weight:700;
-
-}
-
-.band-score{
-
-    text-align:center;
-
-}
-
-.band-score span{
-
-    display:block;
-    color:var(--text-light);
-    font-size:.8rem;
-
-}
-
-.band-score strong{
-
-    display:block;
-    font-size:2.3rem;
-    color:var(--primary);
-
-}
-
-.score-list{
-    margin-top:1rem;
-    display:grid;
-    gap:.75rem;
-    margin:1rem 0;
-
-}
-
-
-.score-row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 2.5rem;
-    align-items: center;
-    gap: .4rem .75rem;
-    font-size: .85rem;
-}
-
-.score-row > span {
-    min-width: 0;
-    overflow-wrap: anywhere;
-}
-
-.score-row > strong {
-    text-align: right;
-}
-
-.score-row .progress {
-    grid-column: 1;
-    grid-row: 2;
+.hero-video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @media (min-width: 768px) {
