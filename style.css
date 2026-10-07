@@ -494,7 +494,7 @@ GAP
 ==============================*/
 
 #gap {
-    padding-top: clamp(3rem, 6vw, 5rem);
+    padding-top: clamp(0rem, 6vw, 0rem);
 }
 
 #gap .section-heading {
@@ -798,45 +798,120 @@ OFFER
 
 
 
-/*==============================
-FAQ
-==============================*/
+/* ========================= */
+/* FAQ */
+/* ========================= */
 
-.faq-wrapper{
-
-    border-top:1px solid var(--border);
-
+.faq-wrapper {
+    width: min(100%, 760px);
+    margin-inline: auto;
+    border-top: 1px solid var(--border);
 }
 
-details{
-
-    padding:1.5rem 0;
-
-    border-bottom:1px solid var(--border);
-
+.faq-wrapper details {
+    border-bottom: 1px solid var(--border);
+    padding: 0;
 }
 
-summary{
+/* Question */
 
-    cursor:pointer;
+.faq-wrapper summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
 
-    font-weight:600;
+    padding: 1.5rem 0;
 
-    list-style:none;
+    cursor: pointer;
+    list-style: none;
 
+    color: var(--text);
+    font-weight: 650;
+    line-height: 1.4;
 }
 
-summary::-webkit-details-marker{
-
-    display:none;
-
+.faq-wrapper summary::-webkit-details-marker {
+    display: none;
 }
 
-details p{
+/* Plus icon */
 
-    margin-top:1rem;
+.faq-icon {
+    display: grid;
+    place-items: center;
 
+    width: 2rem;
+    height: 2rem;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    font-size: 1.25rem;
+    font-weight: 400;
+
+    transition: transform .25s ease;
 }
+
+/* Answer */
+
+.faq-answer {
+    width: 100%;
+    max-width: none;
+    padding: 0 0 1.75rem 0;
+}
+
+.faq-answer p {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Open state */
+
+.faq-wrapper details[open] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-wrapper details[open] summary {
+    padding-bottom: 1rem;
+}
+
+/* Hover */
+
+.faq-wrapper summary:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 767px) {
+
+    .faq-wrapper summary {
+        padding: 1.25rem 0;
+        gap: 1rem;
+    }
+
+    .faq-answer {
+        padding: 0 2.75rem 1.5rem 0;
+    }
+
+    .faq-answer p {
+        font-size: .95rem;
+        line-height: 1.65;
+    }
+
+    .faq-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 1.1rem;
+    }
+}
+
+
 
 /*==============================
 FINAL CTA
