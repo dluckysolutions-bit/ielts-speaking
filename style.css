@@ -338,7 +338,7 @@ HERO
     aspect-ratio: 16 / 9;
     overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
+    border-radius: 8px;
     box-shadow: var(--shadow);
     background: #181818;
 }
@@ -377,7 +377,7 @@ HERO
         width: 100%;
         height: 220px;
         aspect-ratio: auto;
-        border-radius: 1rem;
+        border-radius: 12px;
     }
 
     .hero-video video {
