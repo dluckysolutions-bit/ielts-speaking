@@ -643,14 +643,20 @@
             return;
         }
 
-       const successMessage = document.querySelector("#form-success");
+       
+const successMessage = document.querySelector("#form-success");
 
-            form.reset();
-
-        form.style.display = "none";
-
-        successMessage.hidden = false;
+// Record the conversion only after Supabase confirms success.
+if (typeof window.gtag === "function") {
+    window.gtag("event", "generate_lead", {
+        method: "website_form"
     });
+}
+
+form.reset();
+form.style.display = "none";
+successMessage.hidden = false;
+
 </script>
 
 
