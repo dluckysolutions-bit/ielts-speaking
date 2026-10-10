@@ -472,7 +472,7 @@
 
         <br> 
 
-        <form>
+        <form id="ielts-lead-form" method="post">
 
             <div>
                 <label for="name">Your Name</label>
@@ -614,7 +614,7 @@
         SUPABASE_KEY
     );
 
-    const form = document.querySelector("#assessment-form form");
+    const form = document.querySelector("#ielts-lead-form");
 
     form.addEventListener("submit", async function (event) {
 
